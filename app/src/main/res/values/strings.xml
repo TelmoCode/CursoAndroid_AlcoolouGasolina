@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Alcool ou Gasolina</string>
+    <string name="hint_gasolina">Valor do Gasolina ex. 4.99</string>
+    <string name="hint_alcool">Valor do Alcool ex. 2.45</string>
+    <string name="txt_titulo">Saiba a melhor opção de combustivel para seu carro</string>
+    <string name="calcular">Calcular</string>
+</resources>
