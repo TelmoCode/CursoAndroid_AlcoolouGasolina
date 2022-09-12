@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextInputEditText inputTextGasolina, inputTextAlcool;
@@ -34,15 +36,19 @@ public class MainActivity extends AppCompatActivity {
 
         if (mValidador == true){
 
+            String padrao = "##,###.##";
+            DecimalFormat df = new DecimalFormat(padrao);
+
             double vAlcoolR = Double.parseDouble(vAlcool);
             double vGasolinaR = Double.parseDouble(vGasolina);
 
-            double resultadoCalculo = vAlcoolR / vGasolinaR;
+            double resultadoCalculo = (vAlcoolR / vGasolinaR) * 100;
+            String valor = df.format(resultadoCalculo);
             if(resultadoCalculo >= 0.7){
-                textResultado.setText("É melhor usar Gasolina");
+                textResultado.setText("É melhor usar Gasolina, relação é: "+ valor+"%");
 
             }else {
-                textResultado.setText("É melhor usar Alcool");
+                textResultado.setText("É melhor usar Alcool, relação é: "+valor+"%");
 
             }
         }else {
